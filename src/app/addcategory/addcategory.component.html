@@ -1,0 +1,35 @@
+<div class="col-4 bg-primary mx-auto card card-primary m-2 p-2">
+  <h2>Add Category</h2>
+</div>
+
+<br>
+<div class="alert alert-success text-white text-center" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'red':'purple'}">{{msg}}</div>
+  <br>
+<section class="col-6">
+  
+<div class="input-group mb-3" >
+  <div class="input-group-prepend m-2">
+    <h3>Category Name</h3>
+  </div>
+  <input type="text" class="form-control" placeholder="Enter Category Name" [(ngModel)]="cat.categoryName" aria-label="" aria-describedby="basic-addon1" >
+  
+</div>
+<input type="submit" (click)="addcat()" class="form-control btn btn-success col-3" style="float: right;" value="Submit">
+
+</section>
+<!--<section class="col-10 mx-auto p-1 m-1">
+  <div class="alert alert-success text-white text-center" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'purple':'red'}">{{msg}}</div>
+  <form #catform="ngForm" (ngSubmit)="addcat()">
+    
+    <div  class="mx-auto align-center" >
+    <div>Category Name</div>
+    <div><input type="text" [(ngModel)]="cat.categoryName" name="txtname" #ename="ngModel" required></div>
+    <div *ngIf="ename.invalid&&ename.touched" class="alert alert-danger">
+    <div *ngIf="ename.errors.required">Category Name is required</div>
+    </div>
+    
+    <input type="submit" value="Add Category" [disabled]="!catform.valid">
+  
+  </div>
+  </form>
+</section>-->
