@@ -1,8 +1,8 @@
-<div class="bg-primary mx-auto card card-primary m-2 p-2">
+<div class="col-5 bg-primary mx-auto card card-primary m-2 p-2">
   <h2>View all category</h2>
 </div>
   <section >
-    <table class="table table-primary table-stripped table-hover" *ngIf="cat!=undefined">
+    <table class=" col-5 mx-auto table table-dark table-stripped table-hover" *ngIf="cat!=undefined">
      
       <tr>
         <td>Category Id</td>
@@ -11,6 +11,7 @@
       <tr *ngFor="let c of cat">
         <td>{{c.categoryId}}</td>
         <td>{{c.categoryName}}</td>
+        <td><button class="btn btn-info" style="float: right;" routerLink="viewall/viewbycategoryname/{{c.categoryName}}" >View Products</button></td>
       </tr>
     </table>
   </section>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -10,18 +11,23 @@ export class ViewproductsbycategorynameComponent implements OnInit {
   prods:any=[];
   msg:string;
   catName:string;
-  constructor(public productservice:ProductService) { }
+  constructor(public productservice:ProductService,public route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params=>{
+      console.log(params);
+      //this.prods.catName= parseInt(params.get("categoryName"));
+      this.prods.name= (params.get("catName"));
+    });
   }
 
   viewbycatName():void {
-    if(this.catName==undefined||this.catName==null)
+    if(this.prods.name==undefined||this.prods.name==null)
     {
       this.msg="Enter the Category Name";
       return ;
     }
-    this.productservice.viewproductsbycategoryName(this.catName).subscribe
+    this.productservice.viewproductsbycategoryName(this.prods.name).subscribe
     (
       data=>
       {

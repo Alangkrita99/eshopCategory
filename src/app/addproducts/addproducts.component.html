@@ -1,35 +1,37 @@
-<section class="col-12 bg-info mx-auto p-1 m-1">
-  <h2>Add Products</h2>
-  <div class="alert alert-success" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div>
+<div class="col-4 bg-primary mx-auto card card-primary m-2 p-2">
+  <h4>Add Products</h4>
+</div>
+<section class="col-5 bg-dark mx-auto p-1 m-1 text-white">
+  <div class=" col-5 alert alert-success mx-auto" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div>
   <form #prodsform="ngForm" (ngSubmit)="addprods()">
     
     <div>Product Code</div>
-    <div><input type="text" [(ngModel)]="prods.code" name="txtname" #ename="ngModel" required></div>
+    <div><input type="text" placeholder="Enter product code" [(ngModel)]="prods.code" name="txtname" #ename="ngModel" required></div>
     <div *ngIf="ename.invalid&&ename.touched" class="alert alert-danger">
     <div *ngIf="ename.errors.required">Product code is required</div>
     </div>
     <div>Product Name</div>
-    <div><input type="text" [(ngModel)]="prods.name" name="txtname" #ename="ngModel" required></div>
+    <div><input type="text" placeholder="Enter product Name"[(ngModel)]="prods.name" name="txtname" #ename="ngModel" required></div>
     <div *ngIf="ename.invalid&&ename.touched" class="alert alert-danger">
     <div *ngIf="ename.errors.required">Product Name is required</div>
     </div>
     <div>Price</div>
-    <div><input type="text" [(ngModel)]="prods.price" name="txtname" #ename="ngModel" required></div>
+    <div><input type="text" placeholder="Enter price" [(ngModel)]="prods.price" name="txtname" #ename="ngModel" required></div>
     <div *ngIf="ename.invalid&&ename.touched" class="alert alert-danger">
     <div *ngIf="ename.errors.required">Price is required</div>
     </div>
     <div>Stock</div>
-    <div><input type="text" [(ngModel)]="prods.stock" name="txtname" #ename="ngModel" required></div>
+    <div><input type="text" placeholder="Enter stock" [(ngModel)]="prods.stock" name="txtname" #ename="ngModel" required></div>
     <div *ngIf="ename.invalid&&ename.touched" class="alert alert-danger">
     <div *ngIf="ename.errors.required">Stock is required</div>
     </div>
     <div>Category ID</div>
-    <div><input type="text" [(ngModel)]="prods.categoryId" name="txtname" #ename="ngModel" required></div>
+    <div><input type="text" placeholder="Enter Category ID" [(ngModel)]="prods.categoryId" name="txtname" #ename="ngModel" required></div>
     <div *ngIf="ename.invalid&&ename.touched" class="alert alert-danger">
     <div *ngIf="ename.errors.required">Category Id is required</div>
     </div>
     
-    <input type="submit" value="Add Products" [disabled]="!prodsform.valid">
+    <input class="bg-primary text-white" type="submit" value="Add Products" [disabled]="!prodsform.valid">
     
   </form>
 </section>

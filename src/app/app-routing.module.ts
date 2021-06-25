@@ -6,7 +6,7 @@ import { ViewallcategoryComponent } from './viewallcategory/viewallcategory.comp
 import { ViewproductsbycategorynameComponent } from './viewproductsbycategoryname/viewproductsbycategoryname.component';
 import { ViewproductsbyproductIdComponent } from './viewproductsbyproduct-id/viewproductsbyproduct-id.component';
 
-const routes: Routes = [{path:'viewbycategoryname',component:ViewproductsbycategorynameComponent},
+const routes: Routes = [{path:'viewall/viewall/viewbycategoryname/:catName',component:ViewproductsbycategorynameComponent},
                        {path:'viewbyproductId',component:ViewproductsbyproductIdComponent},
                        {path:'addproducts',component:AddproductsComponent},
                        {path:'addcategory',component:AddcategoryComponent},
